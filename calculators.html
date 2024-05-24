@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .first-row,
+    .second-row,
+    .third-row,
+    .fourth-row,
+    .fifth-row{
+        display: grid;
+        grid-template-columns: 100px 100px 100px 100px;
+        place-content: center;
+        place-items: center;
+        
+    }
+    body{
+        text-align: center;
+    }
+    button{
+        height: 58px;
+        width: 60px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 100px;
+        font-weight: 700;
+        font-size: 20px;
+        box-shadow: 1px 3px 5px 1px gray;
+
+        
+    }
+    .first-row button{
+        background-color: rgb(238, 178, 67);
+    }
+    .js-multiplication button, 
+    .js-minus  button,
+    .js-addition button
+    {
+        background-color: rgb(238, 178, 67);
+
+    }
+    .js-display-claculations{
+        font-size: 40px;
+        font-weight: 700;
+        background-color: rgb(203, 203, 203);
+        width: 200px;
+        border-radius: 3px;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+    .math-container{
+        border: 2px black solid;
+        width: 450px;
+        margin: auto;
+        padding: 10px;
+        border-radius: 2px;
+        background-color: rgb(237, 237, 237);
+        box-shadow: 1px 1px 10px grey;
+
+
+
+    }
+    @media (max-width : 450px) {
+        .math-container{
+            width: 370px;
+            padding: 15px;
+        }
+        
+    }
+
+
+    
+</style>
+<body>
+    <p class="js-display-claculations"></p>
+    <div class="math-container">
+
+    
+    
+        <div class="first-row">
+            <div class="clear-button">
+                <button onclick="
+                calculation += ;
+                    ">C</button>
+
+            </div>
+            <div class="bracket-button">
+                <button onclick="
+                calculateMath('()');
+                    ">()</button>
+
+            </div>
+            <div class="modulus-button">
+                <button onclick="
+                calculateMath(' % ');
+                    ">%</button>
+
+            </div>
+            <div class="divide-button">
+                <button onclick="
+                calculateMath('/');
+                    ">/</button>
+
+            </div>
+
+
+        </div>
+        <div class="second-row"> 
+            <div class="7">
+                <button onclick=" 
+                calculateMath('7');
+                    ">7</button>
+
+            </div>
+            <div class="8">
+                <button onclick="
+                calculateMath('8');
+                    ">8</button>
+
+            </div>
+            <div class="9">
+                <button onclick="
+                calculateMath('9');
+                    ">9</button>
+
+            </div>
+            <div class="js-multiplication">
+                <button onclick="
+                calculateMath('*');
+                    ">x</button>
+
+            </div>
+        
+    
+        </div>
+        <div class="third-row">
+            <div class="4">
+                <button onclick="
+                calculateMath('4');
+                    ">4</button>
+
+            </div>
+            <div class="5">
+                <button onclick="
+                calculateMath('5');
+                    ">5</button>
+
+            </div>
+            <div class="6">
+                <button onclick="
+                calculateMath('6');
+                    "> 6</button>
+
+            </div>
+            <div class="js-minus">
+                <button onclick="
+                calculateMath('-');
+                    ">-</button>
+
+            </div>
+
+        </div>
+        <div class="fourth-row">
+            <div class="1">
+                <button onclick="
+                calculateMath('1');
+                    ">1</button>
+
+            </div>
+            <div class="2">
+                <button onclick="
+                calculateMath('2');
+                    ">2</button>
+
+            </div>
+            <div class="3">
+                <button onclick="
+                calculateMath('3');
+                    ">3</button>
+
+            </div>
+            <div class="js-addition">
+                <button onclick="
+                calculateMath('+');
+                    ">+</button>
+
+            </div>
+
+        </div>
+        <div class="fifth-row">
+            <div class="0">
+                <button onclick="
+                calculateMath('0');
+                    ">0</button>
+
+
+            </div>
+            <div class="=">
+                <button onclick="
+                calculation = eval(calculation);
+                console.log(calculation);
+                document.querySelector('.js-display-claculations').innerHTML = calculation;
+                
+                    ">=</button>
+
+            </div>
+        
+
+        </div>
+    </div>
+
+    <script>
+        let calculation = '';
+        function calculateMath(value){
+            calculation  +=  value;
+            document.querySelector('.js-display-claculations').innerHTML = calculation;
+
+        }
+
+
+    </script>
+    
+</body>
+</html>
